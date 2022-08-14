@@ -13,6 +13,8 @@ A program for raid discord servers [GUI]
 # ⚙️ Instructions ⚙️
 1) Downoload This
 2) Open main.py
+3) Add tokens
+4) Choose option
 
 # ⚠️ Disclaimer ⚠️
 I am not responsible for what you do. The program is for educational purposes only!
