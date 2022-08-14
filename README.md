@@ -12,7 +12,7 @@ A program for raid discord servers [GUI]
 
 # ⚙️ Instructions ⚙️
 1) Downoload This
-2) Open main.py
+2) Open main.py using cmd
 3) Add tokens
 4) Choose option
 
