@@ -6,7 +6,7 @@ A program for raid discord servers [GUI]
 - Graphical interface
 - Ping all [COMING SOON]
 - Multiple tokens
-- Joiner [COMING SOON]
+- Inviter (Joiner)
 - Lag Flooder [COMING SOON]
 - DM Flooder [COMING SOON]
 
