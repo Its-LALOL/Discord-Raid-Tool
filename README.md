@@ -2,13 +2,13 @@
 A program for raid discord servers [GUI]
 
 # 🌟 Features 🌟
-- Very fast
-- Graphical interface
-- Ping all [COMING SOON]
-- Multiple tokens
-- Inviter (Joiner)
-- Lag Flooder [COMING SOON]
-- DM Flooder [COMING SOON]
+- [x] Very fast
+- [x] Graphical interface
+- [ ] Ping all [COMING SOON]
+- [x] Multiple tokens
+- [x] Inviter (Joiner)
+- [ ] Lag Flooder [COMING SOON]
+- [ ] DM Flooder [COMING SOON]
 
 # ⚙️ Instructions ⚙️
 1) Downoload This
