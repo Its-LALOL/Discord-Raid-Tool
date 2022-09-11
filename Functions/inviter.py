@@ -34,12 +34,14 @@ def start():
 			driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div/div[1]/div/div/div/div/section/div/button').click()
 			print('Please solve capthca')
 			while True:
-				if driver.current_url!=invite:
-					clear()
-					driver.quit()
-					del driver
-					break
-				sleep(0.5)
+					if 'channels' in driver.current_url: break
+					try:
+						driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div/div[1]/div/div/div/section/div/button')
+						break
+					except:sleep(0.5)
+			clear()
+			driver.quit()
+			del driver
 	messagebox.showinfo('Raid Tool by LALOL | Inviter', 'All valid accounts joined!')
 def exitt():
 	global isexit
