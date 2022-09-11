@@ -59,5 +59,5 @@ Label(text='Invite: ', fg='white', bg='black', font=('Fixedsys', 10)).place(x=0,
 invite=Entry(width=32, fg='black', bg='grey', font=('Fixedsys', 10))
 invite.place(x=140, y=0)
 Button(text='Paste', fg='black', bg='grey', command=paste_invite).place(x=103, y=0)
-Button(text='Start', fg='yellow', bg='grey', font=('Georgia', 13), command=start).place(x=0, y=40)
+Button(text='Start', fg='yellow', bg='grey', font=('Georgia', 13), command=starter).place(x=0, y=40)
 window.mainloop()
