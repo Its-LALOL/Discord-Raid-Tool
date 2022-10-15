@@ -2,12 +2,11 @@ import requests
 from tkinter import Tk, Button, Label, Entry, INSERT, messagebox
 from pyperclip import paste
 from time import sleep
-from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-import undetected_chromedriver
+import undetected_chromedriver as uc
 from os import system
 from threading import Thread
+
 
 isexit=False
 clear=lambda: system('cls||clear')
@@ -24,24 +23,30 @@ def start():
 		token=token.replace('\n', '')
 		response=requests.get('https://discord.com/api/v9/users/@me/library',headers={'Authorization': token})
 		if response.status_code==200 or response.status_code==202 or response.status_code==204:
-			driver=undetected_chromedriver.Chrome()
+			while True:
+				try:
+					driver=uc.Chrome(use_subprocess=True)
+					break
+				except: pass
 			clear()
 			driver.maximize_window()
 			driver.get(invite.get())
 			driver.execute_script('function login(token){setInterval(()=>{document.body.appendChild(document.createElement`iframe`).contentWindow.localStorage.token=`"${token}"`},50);setTimeout(()=>{},2500)}login("' + token + '");')
+			driver.refresh()
 			driver.get(invite.get())
 			sleep(5)
-			driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div/div[1]/div/div/div/div/section/div/button').click()
+			try: driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div/div[1]/div/div/div/div/section/div/button').click()
+			except:
+				driver.refresh()
+				driver.get(invite.get())
 			print('Please solve capthca')
 			while True:
-					if 'channels' in driver.current_url: break
-					try:
-						driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div/div[1]/div/div/div/section/div/button')
-						break
-					except:sleep(0.5)
-			clear()
-			driver.quit()
-			del driver
+				if driver.current_url!=invite:
+					clear()
+					driver.quit()
+					del driver
+					break
+				sleep(0.5)
 	messagebox.showinfo('Raid Tool by LALOL | Inviter', 'All valid accounts joined!')
 def exitt():
 	global isexit
