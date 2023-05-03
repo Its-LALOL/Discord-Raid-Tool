@@ -35,7 +35,7 @@ def start():
 			driver.refresh()
 			driver.get(invite.get())
 			sleep(5)
-			try: driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div/div[1]/div/div/div/div/section/div/button').click()
+			try: driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div[1]/div[1]/div/div/div/div/section/div[2]/button').click()
 			except:
 				driver.refresh()
 				driver.get(invite.get())
